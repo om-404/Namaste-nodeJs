@@ -1,0 +1,26 @@
+1. route handeling
+2. note - order of route handlesr matter a lot - we can see in case-03 and case-04 in app.js
+
+# HTTP METHODS
+1. whenever you type any url on browser, you make GET api call by default 
+2. we have to write explicitly in our code make other request methods
+3. created the get, post, delete method
+4. regex - Regex (Regular Expressions) are used to match, search, validate, and manipulate patterns in text instead of matching exact strings.
+   - Email validation - /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+   - Phone number validation - /^[0-9]{10}$/
+5. diffrence b/w query and params
+   - req.query - identify by ?, Resource is mandatory, 
+   - req.params - identify by :, Data is optional
+
+| Feature     | `req.params`                     | `req.query`            |
+| ----------- | -------------------------------- | ---------------------- |
+| Source      | **URL path**                     | **Query string (`?`)** |
+| Mandatory   | Usually **required**             | Usually **optional**   |
+| Purpose     | Identify a **specific resource** | Filter, sort, paginate |
+| REST usage  | Resource identification          | Resource modification  |
+| Example URL | `/user/10`                       | `/user?age=22`         |
+
+
+# One-line difference (MEMORIZE)
+req.params → URL path variables (required)
+req.query → URL options & filters (optional)
