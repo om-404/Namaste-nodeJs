@@ -1,0 +1,16 @@
+{
+  "name": "03_creating_our_express_server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "om sonawale",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

@@ -1,0 +1,11 @@
+# questions for interview
+
+1. what is packages.json ?
+2. what is package-lock.json ?
+3. what is node_modules ? - when we install express or other tools it downloads code from the internet and store the code in node modules
+4. what is dependencies ? - dependencies are the pacage on which our project is depend upon
+5. diffrence b/w package.jsom and package-lock.json ? 
+6. what is .bin folder node_modules ?
+7. what is ~ and ^ and version ? also covered about packages.json and package-lock.json - timeline - s2_e03 - 25:20 to 39:30
+8. what is nodemon ?
+9. what is the use of "-g" while npm install

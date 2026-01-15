@@ -1,0 +1,15 @@
+1. intializing the project or configuration
+2. npm init
+3. package.json - is like index of the project, metadata associate with the project, 
+4. creating src folder
+5. in src folder we create app.js file, from src folder we write our code, initialize the project
+6. we will create server using express in app.js file
+   - express js is a web framework for nodejs
+   - installing express using npm - npm install express
+   - after installing express, package-lock.json file and node_modules files are created
+   - listen() is used to listen the port
+7. write a request handler using app.use().
+8. installing nodemon
+9. edit in package.json / script
+   -  "start": "node src/app.js",
+      "dev": "nodemon src/app.js" - npm run dev
