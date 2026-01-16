@@ -1,0 +1,50 @@
+# questions for interview
+
+1. what is middleware ?
+=> Middleware is a function that runs in between the request coming from the client and the response sent by the server, used to process, modify, or check the request before moving forward.
+
+# why middleware are required ?
+- We need middleware to process, check, or modify a request before it reaches the route handler.
+- Without middleware, we would have to write the same logic inside every route handler, making the code messy and hard to maintain.
+
+Very short real-world use cases :
+Authentication (checking login)
+Logging requests
+Parsing request data
+Error handling
+
+2. what is request handler ?
+=> A request handler is the final function that handles a request and returns a response to the client.
+Client sends request ➝
+Middleware checks/modifies it ➝
+Request handler sends the response
+
+3. what is next() ?
+=> next is a function used in middleware to pass control to the next middleware or request handler.
+
+Middleware → uses next()
+Request handler → usually does not use next() because it sends the response
+
+4. what is route handler ?
+=> A route handler is a function that runs when a specific URL and HTTP method is matched and it sends the response to the client.
+
+5. Diffrence between app.use() and app.all() ?
+=> app.use()
+app.use() is used to apply middleware to all HTTP methods for a given path.
+Key points:
+Used mainly for middleware
+Works for ALL HTTP methods (GET, POST, PUT, DELETE, etc.)
+Runs before route handlers
+Path matching is prefix-based
+Common use - Auth, logging, validation
+
+=> app.all()
+app.all() is used to handle all HTTP methods for a specific route.
+Key points:
+Used mainly for route handling
+Runs only when the exact route matches
+Can act like a route handler
+Good for handling “any method” on one route
+Common use - Handle one route for all methods
+
+

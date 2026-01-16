@@ -1,0 +1,41 @@
+1. Route handler
+2. app.use() handle any type of method
+3. if we donot send any response { res.send() } then, it will just hanging around(loading and eventually give timeout)
+
+4. multiple route handler
+   app.use(</route>, {route handler-1}, {route handler-2}...);
+
+5. next() - it is a function
+          - third parameter in handler function after req, res
+          - (req, res, next) => {}
+          - this method is used to pass the control to the next route handler
+
+6. wrapping routes inside an array doesnot affect the result
+app.use("/router", rh1, rh2, rh3, rh4, rh5, rh6);
+app.use("/router", [rh1, rh2, rh3, rh4, rh5, rh6]);
+app.use("/router", [rh1, rh2, rh3], rh4, rh5, rh6);
+app.use("/router", rh1, rh2, [rh3, rh4], rh5, rh6);
+app.use("/router", rh1, rh2, rh3, [rh4, rh5, rh6]);
+
+- all will give the same result
+
+7. GET/users(when the route match) ====> chain of middlewares(functions) =====> request Handler
+- after the GET/users route matches - then it keep on going with the chain of middlewares - untile it reaches to request handler
+- request Handler - are the function, which actually handle the request and give response
+- middlewares - all of the functions which goes through in between is known as middleware 
+
+8. HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes:
+Informational responses (100 – 199)
+Successful responses (200 – 299)
+Redirection messages (300 – 399)
+Client error responses (400 – 499)
+Server error responses (500 – 599)
+
+
+# app2.js
+1. write dummy auth middlewares
+
+# app3.js
+1. write dummy aut middleware in seprate folder
+2. error handeling middleware
+
