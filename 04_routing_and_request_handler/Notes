@@ -1,6 +1,7 @@
 1. route handeling
 2. note - order of route handlesr matter a lot - we can see in case-03 and case-04 in app.js
 
+3. app.use() => can handle any type of method
 # HTTP METHODS
 1. whenever you type any url on browser, you make GET api call by default 
 2. we have to write explicitly in our code make other request methods
