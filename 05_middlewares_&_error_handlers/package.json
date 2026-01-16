@@ -10,7 +10,8 @@
     "start": "node src/app.js",
     "dev1": "nodemon src/app1.js",
     "dev2": "nodemon src/app2.js",
-    "dev3": "nodemon src/app3.js"
+    "dev3": "nodemon src/app3.js",
+    "dev4": "nodemon src/app4.js"
   },
   "dependencies": {
     "express": "^5.2.1"

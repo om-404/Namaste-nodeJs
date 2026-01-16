@@ -39,3 +39,19 @@ Server error responses (500 – 599)
 1. write dummy aut middleware in seprate folder
 2. error handeling middleware
 
+# app4.js - Error Handeling
+- using trycatch
+- using error route handler
+- err - err is the error object passed to Express error-handling middleware when something goes wrong during request processing.
+- Normal middleware: (req, res, next)
+  Error middleware: (err, req, res, next)
+- The first parameter (err) tells Express this is an error handler
+
+Request → Middleware → Route Handler
+               ↓
+           next(err)
+               ↓
+        Error Handler (err, req, res, next)
+
+note - error handeling middleware - should be written in the end of routes
+
