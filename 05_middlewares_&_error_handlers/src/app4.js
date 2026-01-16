@@ -3,7 +3,7 @@ const {adminAuth, userAuth} = require('./middlewares/auth.js')
 
 const app = express();
 
-// <----------------------------- case - 01 - error route handler ----------------------------->
+// <----------------------------- case - 01 - trycatch ----------------------------->
 
 app.get('/getUserData', (req, res)=>{
     try {
@@ -24,7 +24,7 @@ app.use('/', (err, req, res, next)=>{
 
 
 
-// <----------------------------- case - 02 - try catch ----------------------------->
+// <----------------------------- case - 02 - error route handler ----------------------------->
 
 app.get('/getUserData', (req, res)=>{
     // logic of db call and get user data
