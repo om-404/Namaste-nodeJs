@@ -36,5 +36,5 @@ defing userSchema means what you are going to store about the user in user colle
 - note donot change and play with _id and __v
 - diff b/w database & collection & documents in mongoDB
   
-# whenever you are doning db related operations always wrap operation in tryCatch block
+# whenever you are doning db related operations always wrap operation in tryCatch block 
 
