@@ -1,0 +1,40 @@
+# DATABASE AND SCHEMA AND MONGOOSE
+
+<!-- MongoDB connection -->
+
+1. establish the connection b/w mongoDB and server
+2. connection application to the cluster
+    - create a config folder inside src
+    - add file database.js to confiq folder
+    - we use mongoose - mongoose is a library to create shema, model and talk to database - read the documentation for more info
+    - 
+3. mongoose.connect() returns a promise, so it should be wrap inside the async await
+
+4. "mongodb+srv://<pro_name>:<password>@cluster0.rlmwza3.mongodb.net/"   => this is refering to the cluster
+5. "mongodb+srv://<pro_name>:<password>@cluster0.rlmwza3.mongodb.net/<database_name>?retryWrites=true&w=majority&appName=Cluster0"   => this is refering to the database
+
+6. Best practice - first connect to the database then listen on the server, because if server the started communicating but the database is not connected then it will be a very bad experience
+@ so start server only after the database is connected
+
+<!-- schema -->
+
+1. schema is an identity to the collection
+defing userSchema means what you are going to store about the user in user collection (such as name, age, gender etc).
+
+2. create model folder inside src and then create user.js file inside the model folder
+3. after defining schema, now next is creating model
+ 
+# writing an API to add user in database
+- for this we will use POST method
+- first we should have the user object, which contain the data about the user
+- now we need to save this user object into the database, for this
+    - we have to create new instance of the user model using keyword 'new'.
+    - then save the new instance by applying .save() function on top of it.
+- note - most of the time mongoose function returns a promise so we have to use async await all the time
+
+- after the user data get saved mongoDB automatically store the _id and __v itself
+- note donot change and play with _id and __v
+- diff b/w database & collection & documents in mongoDB
+  
+# whenever you are doning db related operations always wrap operation in tryCatch block
+
