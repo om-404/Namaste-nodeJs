@@ -1,0 +1,19 @@
+# adding some checks inside the schema or DB
+- adding diffrent schemaTypes
+- eg - required, unique, default, trim, lowercase, minLength, maxLength ... - this checks let database not to pollute
+- min & max - use for a number
+- minLength & maxLength - use for string
+- custome - validate function
+
+  validate(value){
+            if(!["male", "female", "others"].includes(value)){
+                throw new Error("Gender data is not valid !");
+            }
+        }
+@ Note - this validate function is only applicable, if new user is created, it will not applicable in patch(update method)
+       - so, to apply in update (patch method) we are using "runValidators"
+
+
+
+
+# 
