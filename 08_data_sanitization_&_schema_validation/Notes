@@ -14,6 +14,7 @@
        - so, to apply in update (patch method) we are using "runValidators"
 
 
+# Api level validation
+- like, I dont want to allow email to update, after the user is created
+- user should able to update certain field of the profile
 
-
-# 
