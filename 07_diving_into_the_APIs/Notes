@@ -1,0 +1,44 @@
+# passing dynamic data into the api
+
+# POST API
+
+- there are diffrent way of sending the data - json, raw, binary...
+- we want to send the json data to server(backend) and server send the data to the database and data will be stored in database
+- js object - 
+{
+    firstName: "om",
+    lastName: "sonawale",
+    email: "om123@gmai.com",
+    age: 20,
+    gender: "male",
+}
+
+- json object - 
+{
+    "firstName": "om",
+    "lastName": "sonawale",
+    "email": "om123@gmai.com",
+    "age": 20,
+    "gender": "male"
+}
+
+- reading the request => req is the request
+- reading the data object => req.body => data is present in body of the request
+- console.log(req) -> give whole object
+- console.log(req.body) -> undefined - because we have sent the json data, and our server is not able to read the json data
+- server can read only JS object
+- to convert json data js data - we need a middleware - express.json()
+
+# GET API
+
+- I want to get all the users from the database
+- so, How to get the data from the database ? 
+        - we should know what are you getting from the database or which model is used
+        - and after that we apply find() function on the userModel
+- /user api created  - to get particular user - find({email : <--->}) or findOne({email : <--->})
+- /feed - to get all the user from DB - find({})
+- /delete - to delete the particular document - findByIdAndDelete(userId)
+- /user - using patch - to update the user - findByIdAndUpdate({_id:userId}, data, options)
+   @ explore the options part in documentation
+
+** read the documentation **
