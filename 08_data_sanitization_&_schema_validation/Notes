@@ -18,3 +18,7 @@
 - like, I dont want to allow email to update, after the user is created
 - user should able to update certain field of the profile
 
+# credential validation
+- we use external library - validator
+- npm i validator
+- read the validator library documentation
