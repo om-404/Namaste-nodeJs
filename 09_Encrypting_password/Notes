@@ -1,0 +1,10 @@
+# Encrypting password
+
+- first create a folder utils/helper - this contaon all the validation function
+- npm i bcrypt
+- bcrypt.hash() - this returns a promise
+  - take , password, salting 
+
+- during signup - we use bcrypt.hash()
+- dusring login - we use bcrypt.compare()
+
