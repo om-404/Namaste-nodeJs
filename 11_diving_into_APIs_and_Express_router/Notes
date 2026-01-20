@@ -1,3 +1,14 @@
 # 
 - using express.router()
 - diffrence b/w app.get() ...
+
+
+# creating logout api
+- 
+
+# creating profile edit api
+/profile/edit
+
+# creating forget password api
+/profile/forget
+
