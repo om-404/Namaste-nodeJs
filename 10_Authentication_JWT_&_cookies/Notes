@@ -1,0 +1,31 @@
+# creating token and cookies - app1.js
+
+- client send the login request (with email and password)
+- server validate the email and password
+- then server will create a jwt token and add this jwt token inside the cookie
+- this token is unique for every single user
+- server then send this cookie in response to the client
+- now, it is an inbuilt feature of every browser, they store every cookie, whenever the cookie come to browser
+- after storing the cookie inside the browser, login process is completed
+
+now,
+- when whenever we make api call once again(let say to get the profile), this cookie also go with api call
+- then the cookie is validated, the profile info. fetch from the DB and then the response is send back
+- now any conncection made or api call made, then this cookie will be send and validated.
+
+now your cookie is expired 
+- so, when we make api call with this old cookie, then it will failed the validation
+- and if validation is failed then you will be directed to login page 
+
+
+- app.use(cookieParser());
+- npm i cookie-parser
+- npm i jsonwebtoken
+
+- create jwt token using jwt.sign()
+- validating token using jwt.verify()
+
+# creating auth middleware - app2.js
+
+# mongoose schema methods
+

@@ -4,6 +4,8 @@ const UserModel = require('./models/user.js')
 const {validateSignupData} = require('./utils/validation.js')
 const bcrypt = require('bcrypt')
 const validator = require('validator');
+const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser');
 
 
 
@@ -12,6 +14,8 @@ const app = express();
 // a middleware which convert json object to js object
 app.use(express.json());
 // this app.use() will run on every request and routes
+
+app.use(cookieParser());
 
 app.post("/signup", async (req, res) => {
     const {firstName, lastName, email, password} = req.body;
@@ -47,7 +51,7 @@ app.post("/signup", async (req, res) => {
     
 })
 
-app.post("/login", async (req, res) => {
+app.post("/login", async (req, res) => {    
     const {email, password} = req.body;
 
     try {
@@ -66,13 +70,52 @@ app.post("/login", async (req, res) => {
             if(!isValidPassword){
                 throw new Error("Ivalid password or Invalid credentials");
             }
+
+            // after the password is valid - we generate token and cookie
             
+            // 1. Create a JWT token
+
+            const token = await jwt.sign({_id: user._id}, "DEVtinder@#$SecretKeY");
+            // console.log(token);
+
+            // 2. add the token to cookie and send cookie to the user
+            res.cookie("token", token);
+
             res.send("login successfull !");
             // res.send(user);
             } catch (error) {
                 res.status(400).send("ERROR : " + error.message);
             }
         
+})
+
+app.get("/profile", async (req, res) => {
+
+    try {
+        const cookies = req.cookies;
+
+        const {token} = cookies;
+
+        if(!token){
+            res.send("invalid token !");
+        }
+
+        // validate token 
+        const decodedMessage = await jwt.verify(token, "DEVtinder@#$SecretKeY");
+
+        const {_id} = decodedMessage;
+
+        // console.log("logged is user is : "+ _id);
+
+        const user = await UserModel.findOne({_id: _id});
+        if(!user){
+            res.send("user doesn't exist !");
+        }
+
+        res.send(user);
+        } catch (error) {
+            res.status(400).send("ERROR : " + error.message);
+        }
 })
 
 app.get("/user", async (req, res) => {
