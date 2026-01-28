@@ -1,0 +1,22 @@
+- enum - we create enum when we want to restrict user for some values
+- read validation in documentation of mongoose
+
+- dynamic api
+
+- pre in schema - it is a kin dof pre check - read the documentation
+
+- concept of index in mongoose
+- when we use unique then mongoose automatically handle index
+- for more imfo - read documentation
+
+
+- compound index
+
+- index help in optimising the query search
+
+- un-necesrily creating index in every filed will create problem - why ? - home work
+- why do we need indexs ?
+
+- logical query - eg - $or - read more about it in mondoDB docs
+- read about queries
+
