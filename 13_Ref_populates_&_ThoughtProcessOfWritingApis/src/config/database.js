@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const connectDb = async () => {
-    await mongoose.connect("");
+    await mongoose.connect("mongodb+srv://tech_becho_ecomerce:20212223@cluster0.rlmwza3.mongodb.net/devtinder?retryWrites=true&w=majority&appName=Cluster0");
 }
 
 connectDb().then(() => {
