@@ -1,0 +1,12 @@
+# commonJs and ES6 modules
+# react router setup - read dcumentation also - npm i react-router-dom
+
+# route structure
+Body
+    NavBar
+    Route = / => feed
+    Route = /login => login
+    Route = /connections => connections
+    Route = /profile => profile
+
+# footer created 
