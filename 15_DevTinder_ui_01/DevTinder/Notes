@@ -15,3 +15,6 @@ Body
 - install axios for frontend
 - CORS - install cors in backend => add middleware to with configureation: origin, credentials: true
 - now, whenever you make an api call from frontend, so pass => axios => {withCredentials: true}
+
+
+# react redux
