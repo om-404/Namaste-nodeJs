@@ -11,6 +11,8 @@ import Body from "./components/Body.jsx";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore.js"
 import Feed from "./components/Feed.jsx";
+import Connections from "./components/Connections.jsx";
+import Requests from "./components/Requests.jsx";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
               <Route path="/" element={<Feed />}></Route>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/profile" element={<Profile />}></Route>
+              <Route path="/connections" element={<Connections />}></Route>
+              <Route path="/requests" element={<Requests />}></Route>
             </Route>
           </Routes>
         </BrowserRouter>
