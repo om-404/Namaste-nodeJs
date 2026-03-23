@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const requestsSlice = createSlice({
-  name: "requests",
+const requestSlice = createSlice({
+  name: "request",
   initialState: null,
   reducers: {
     setRequests: (state, action) => {
@@ -14,5 +14,5 @@ const requestsSlice = createSlice({
   },
 });
 
-export default requestsSlice.reducer;
-export const { setRequests, removeRequest } = requestsSlice.actions;
+export default requestSlice.reducer;
+export const { setRequests, removeRequest } = requestSlice.actions;
